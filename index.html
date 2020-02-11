@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="Federico Lusiani">
+	<meta name="description" content="hhh">
+	<title>BlackHackManager</title>
+
+	<script src="js/general.js"></script>
+	<script src="js/log_in_out.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+</head>
+
+<body OnLoad="CaricaUser(true)">
+	<div class="backgroundLayer">
+		<div class ="totalcontainer">
+			<!-- header -->
+			<div class = "headercontainer">
+				<header>
+					<h1>BHM</h1>
+					<h5>The <b>B</b>lack <b>H</b>ack <b>M</b>anager</h5>
+				</header>
+				<nav>
+					<ul>
+						<li><a class="selected fade-in" href="#">LOG-IN</a></li>
+						<li><a class="fade-in" href="sign_up.html">SIGN-UP</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--corpo principale -->
+			<div class="main_section">
+				<div class="sub_section">
+					<h3><b>LOG-IN</b></h3>
+					<!--<p class = "description">La password deve essere almeno di 8 caratteri.</p>-->
+					<p p class = "description">Non hai un account? <a class="fade-in" href="sign_up.html">Registrati</a>.</p>
+					<p p class = "description">Nel database sono già presenti 2 user utilizzabili:<br>
+					&emsp; Username: pippo; &emsp; Password: pippo<br>
+					&emsp; Username: paperino; &emsp; Password: paperino</p>
+					<form>
+						<label for="username">Username:</label>
+						<input type="text" id="username" name="username" maxlength="50"> 
+						
+						<label for="pass">Password:</label>
+						<input type="password" id="pass" name="password" maxlength="50"> 
+						
+						<input type="button" onclick="log_in()" value="Log-In">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>&copy;2019 Federico Lusiani</footer>
+</body>
+</html>

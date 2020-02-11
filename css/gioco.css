@@ -1,0 +1,106 @@
+/*css per la pagina home.html*/
+
+.gioco_wrap {
+	background-color: rgba(176,190,197,0.9);
+	display:flex;
+	flex-direction:row;
+	padding-bottom:50px;
+}
+
+.console_wrapper{
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	/*background-color:#5d4037;*/
+	/*border: 2px solid black;*/
+}
+
+.console{
+	display:inline-block;
+	width:90%;
+	height:400px;
+	background-color:#111d22;/*#1c313a/*#002e27;*/
+	overflow-y:auto;
+	font-size:1.2em;
+	border: 2px solid #37474f;
+}
+
+.console span.linea{
+	display:block;
+	color:white;
+}
+
+
+.console span.linea:nth-child(even){
+	background-color:#102027; /*#00251a;/*#00140e;*/
+}
+
+
+span.nome{
+	color:orange;
+}
+
+span.keyword{
+	/*font-weight:bold;*/
+	color:yellow;
+}
+
+span.good{
+	color:LimeGreen;
+}
+
+span.bad{
+	color:#ff3d00;
+}
+
+.spazio_console{
+	display:inline-block;
+	resize:none;
+	border:none;
+	font-size:1.2em;
+	/*outline:none;*/
+}
+
+
+
+/*
+#console_input{
+	display: inline-block;
+	background: black;
+	border:none;
+	color: white;
+	width:90%;
+	margin: 3%;
+	resize:none;
+	padding: 2px;
+	font-size:1.2em;
+}*/
+
+#console_input {
+    border:none;
+    outline:none;
+	background: transparent;
+	width:90%;
+	color: white;
+	font-size:1em;
+	display:inline;
+}
+label[for="console_input"] {
+	display: inline-block;
+	background: black;
+	border:none;
+	color: white;
+	width:90%;
+	margin: 3%;
+	resize:none;
+	padding: 2px;
+	font-size:1.2em;
+	padding: 0 0 0 1em;
+}
+
+
+
+
+
+
+

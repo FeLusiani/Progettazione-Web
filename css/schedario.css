@@ -1,0 +1,220 @@
+/*css per la pagina home.html*/
+
+.schedario_wrap {
+	background-color: rgba(176,190,197,0.9);
+	display:flex;
+	flex-direction:row;
+	padding-bottom:50px;
+}
+
+/*pannello sinistro*/
+.left {
+	display: inline-block;
+	padding:10px 10px 10px 50px;
+	max-width:300px;
+	max-height: 90%;
+	background-color: black;
+	color:white;
+}
+
+#schede_wrap{
+	margin:5px;
+	height:500px;
+	overflow-y:auto;
+	background-color: rgb(30,30,30);
+}
+
+button.scheda {
+	display: flex;
+	flex-direction: row;
+	margin:5px;
+	padding:2px 5px;
+	background-color:rgba(176,190,197,0.9);
+	width:220px;
+	height:40px;
+	border:none;
+}
+
+
+
+.scheda img{
+	display: inline-block;
+	max-height: 1.5em;
+	margin-right:15px;
+	position:relative;
+	top:3px;
+	
+}
+
+.plus{
+	font-family: CocoGoose;
+	font-size:2em;
+	padding:0em 0.2em;
+}
+
+#nuova_scheda_button{
+	font-family:CocoGoose;
+}
+
+.scheda span{
+	display: inline-block;
+	margin:3px;
+	font-size:1.2em;
+	max-width:10em;
+	max-height:1.5em;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	text-align:left;
+  white-space: nowrap; 
+}
+
+
+/*display destro*/
+.right {
+	display: inline-block;
+	padding:10px 0px 10px 20px;
+	width:900px;
+	max-height: 90%;
+	background-color: #455a64;/*rgba(255,255,255,0.9);*/
+
+}
+
+.scheda_header button{
+	background-color:rgba(176,190,197,0.9);
+	font-family: CocoGoose;
+	font-size:1.5em;
+	margin-left:20px;
+	border:none;
+	padding: 0px 5px;
+}
+
+button{
+  background-position: center;
+  transition: background 0.8s, color 0.2s;
+}
+
+button:hover{
+  background: #ffa500 radial-gradient(circle, transparent 1%, #ffa500 1%) center/15000%;
+	color:white;
+	background-color:orange;
+}
+
+button:active{
+  background-color: #ffff00;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.scheda_body{
+	display: flex;
+	height:500px;
+	flex-direction:row;
+	margin-top:15px;
+}
+
+.scheda_body_left{
+	display:inline-block;
+	width:50%;
+	background-color:#424242;
+	padding:10px;
+	color:#cccccc;
+}
+
+#scheda_nome{
+	background:transparent;
+	resize:none;
+	border:none;
+	font-size:2em;
+	margin: 0.2em 0em;
+	color: white;
+	width:90%;
+	max-width:90%;
+	text-align:center;
+	max-height:2.7em;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
+#scheda_note{
+	color: black;
+	font-size:1.2em;
+	background-color:LightGray;
+	width:95%;
+	height:330px;
+	resize:none;
+	padding:5px;
+}
+
+.scheda_body_right{
+	display:flex;
+	width:40%;
+	background-color:#718792;
+	justify-content:space-around;
+}
+
+
+.right.hidden *{
+	opacity:0;
+}
+
+
+
+#save_button.disabilitato, #delete_button.disabilitato{
+		opacity:0.5;
+}
+
+#scheda_nome.editable{
+	background-color: rgb(176,190,197);
+}
+
+#scheda_note.editable{
+	background-color:LightBlue;
+}
+
+.table_wrapper{
+	display:inline-block;
+	margin:10%;
+}
+
+table{
+	font-size: 1.5em;
+	width:200px;
+	border-collapse: collapse;
+	/*margin-top:10%;
+	margin-left:10%;*/
+}
+
+th{
+	background-color:black;
+	color:white;
+	font-family:CocoGoose;
+	text-align: center;
+	font-weight:normal;
+	padding:5px;
+}
+
+td{
+	padding:5px;
+}
+
+table tr:nth-child(odd){
+	background-color:rgb(176,190,197);
+}
+
+table tr:nth-child(even){
+	background-color:white;
+}
+
+table input{
+	width:50px;
+	background:orange;
+	border:none;
+	font-size:1em;
+}
+
+table input:read-only{
+	background:transparent;
+}
+
+
+

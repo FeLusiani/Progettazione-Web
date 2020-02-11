@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="Federico Lusiani">
+	<meta name="description" content="hhh">
+	<title>BlackHackManager</title>
+	
+	<script src="js/general.js"></script>
+	<script src="js/pagina_comandi.js"></script>
+	<script src="js/log_in_out.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+	<link rel="stylesheet" type="text/css" href="css/comandi.css">
+	<link rel="stylesheet" type="text/css" href="css/gioco.css">
+</head>
+
+<body OnLoad="CaricaUser()">
+	<div class="backgroundLayer">
+		<div class ="totalcontainer">
+			<div class="pannello_utente">
+				<p>Utente: </p>
+				<span id="user"></span>
+				<input type="button" value="LOG-OUT" onclick="log_out()"> 
+			</div>
+			<!-- header -->
+			<div class = "headercontainer">
+				<header>
+					<h1>BHM</h1>
+					<h5>The <b>B</b>lack <b>H</b>ack <b>M</b>anager</h5>
+				</header>
+				<nav>
+					<ul>
+						<li><a class="fade-in" href="home.html">HOME</a></li>
+						<li><a class="fade-in" href="schedario.html">SCHEDARIO</a></li>
+						<li><a class="fade-in" href="gioco.html">GIOCO</a></li>
+						<li><a class="selected fade-in" href="#">COMANDI</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--corpo principale -->
+			<div class="main_section">
+				<div class="sub_section">
+					<h3>STAT COMMAND</h3>
+					<p class = "description">
+					Lo <b>STAT command</b> permette di controllare velocemente
+					il valore della statistica indicata per una certa entità, e il bonus ad essa correlata.
+					Il bonus correlato ad una statistica è dato dal suo valore meno 10.</p>
+					<p>Il campo [STAT] deve essere l'abbreviazione di una statistica.<br>
+					Guardare la pagina <a class="selected fade-in" href="home.html">Home</a> per vedere la lista delle statistiche e le loro abbreviazioni.</p>
+					<p>La sintassi è la seguente:</p>
+					<p class = "sintassi">>>> &emsp; [ NOME ] &emsp; [ STAT ]</p>
+					<p class="nota">NOTE: Il campo [STAT] è case-insensitive.</p>
+					<div class="esempi">
+					  <div class="apri_chiudi" onclick="apri_chiudi(this)"><h4> ESEMPIO:</h4></div>
+					  <div class="contenuto_esempi">
+						  <p>
+							Per controllare il valore di Intelligenza di <span class="nome">Sirio</span>:
+						  </p>
+						  <p class = "sintassi">>>>&emsp;Sirio int</p>
+						  <p>Output:</p>
+						  <p class = "esempio_output">
+						  &emsp;>>>&emsp;<span class="nome">Sirio</span> INT<br>
+						  &emsp;<br>
+						  &emsp;<span class="nome">Sirio</span> INT&emsp;==>&emsp;13<br>
+						  &emsp;<span class="nome">Sirio</span> INT bonus:&emsp; <span class="good">+3</span><br>
+						  &emsp;
+						  </p>
+					  </div>
+					</div>
+				</div>
+				<div class="sub_section">
+					<h3>CHECK STAT COMMAND</h3>
+					<p class = "description">
+					Il <b>CHECK STAT command</b> permette di fare eseguire una prova ad un'entità, sulla base della statistica indicata.<br>
+					Il programma simula il tiro di un dado a 20 facce (1d20) e somma il bonus della statistica rilevante.
+					Il risultato della prova viene comparato con il valore della CD (<b>Classe Difficoltà</b>) indicata:
+					se maggiore, l'entità ha superato la prova, altrimenti ha fallito.<br>
+					La sintassi è la seguente:</p>
+					<p class = "sintassi">>>> &emsp; [ NOME ]&emsp;check&emsp;[ STAT ]&emsp;CD&emsp;[ CD value ]</p>
+					<p class="nota">NOTE: Il campo [STAT] è case-insensitive.
+					Anche la keyword "cd" può essere utilizzata al posto di "CD".</p>
+					<div class="esempi">
+					  <div class="apri_chiudi" onclick="apri_chiudi(this)"><h4> ESEMPI:</h4></div>
+					  <div class="contenuto_esempi">
+						  <p>
+							Per fare eseguire una prova di Forza CD 15 a <span class="nome">Lily</span>:
+						  </p>
+						  <p class = "sintassi">>>>&emsp;Lily check FOR CD 15</p>
+						  <p>Output:</p>
+						  <p class = "esempio_output">
+						  &emsp;>>>&emsp;<span class="nome">Lily</span> <span class="keyword">check</span> FOR CD 15<br>
+						  &emsp;<br>
+						  &emsp;Rolling 1d20... -->&emsp;&emsp;18<br>
+						  &emsp;Adding <span class="nome">Lily</span> FOR bonus:&emsp;<span class="bad">-2</span><br>
+						  &emsp;<span class="nome">Lily</span> FOR check is&emsp;&emsp;16<br>
+						  &emsp;<span class="nome">Lily</span> has <span class="good">SUCCEDED!</span><br>
+						  &emsp;
+						  </p>
+					  </div>
+					</div>
+				</div>
+				<div class="sub_section">
+					<h3>VS COMMAND</h3>
+					<p class = "description">
+					Il <b>VS command</b> permette di eseguire una prova contrapposta tra due entità,
+					sulla base della statistica indicata.<br>
+					Entrambe le entità eseguono una prova sulla base della statistica rilevante.<br>
+					L'entità che ottiene un risultato maggiore vince. In caso di parità, nessuna delle due entità vince, e si ha un pareggio.<br>
+					La sintassi è la seguente:</p>
+					<p class = "sintassi">>>> &emsp; [ NOME ]&emsp;vs&emsp;[ NOME ]&emsp;check&emsp;[ STAT ]</p>
+					<p class="nota">NOTE: Il campo [STAT] è case-insensitive.</p>
+					<div class="esempi">
+					  <div class="apri_chiudi" onclick="apri_chiudi(this)"><h4> ESEMPI:</h4></div>
+					  <div class="contenuto_esempi">
+						  <p>
+							Per fare eseguire una prova contrapposta di Carisma, tra <span class="nome">Sirio</span> e <span class="nome">Lily</span>:
+						  </p>
+						  <p class = "sintassi">>>>&emsp;Sirio vs Lily check car</p>
+						  <p>Output:</p>
+						  <p class = "esempio_output">
+						  &emsp;>>>&emsp;<span class="nome">Sirio</span> <span class="keyword">vs</span> <span class="nome">Lily</span>
+								<span class="keyword">check</span> car<br>
+						  &emsp;<br>
+						  &emsp;<span class="nome">Sirio</span> rolls 1d20 --> 10 <span class="bad">-3</span> ==> 7<br>
+						  &emsp;<span class="nome">Lily</span> rolls 1d20 --> 5 <span class="good">+3</span> ==> 8<br>
+						  &emsp;<span class="nome">Lily</span> <span class="keyword">WINS OVER</span> <span class="nome">Sirio</span><br>
+						  &emsp;
+						  </p>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>&copy;2019 Federico Lusiani</footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+p.nota{
+	font-style:italic;
+}
+
+p.sintassi{
+	margin-left:2em;
+	background-color:black;
+	color:white;
+}
+
+div.esempi, div.esempi.aperto:hover{
+	margin:1em;
+	background-color:#455a64;
+	color: orange;
+}
+
+div.esempi h4::before {/*freccina verso destra*/
+  content: ' ';
+  display: inline-block;
+
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid white;
+
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+div.esempi h4::before {/*freccina verso sinistra*/
+  content: ' ';
+  display: inline-block;
+
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid white;
+
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+div.esempi.aperto h4::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.apri_chiudi{
+	padding:0.8em;
+}
+
+.apri_chiudi:hover{
+  background-color:#00796b;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.contenuto_esempi {
+  max-height: 0px;
+  overflow: hidden;
+  color: white;
+
+  transition: max-height .25s ease-in-out;
+}
+
+.aperto .contenuto_esempi {
+	max-height:40em;
+}
+
+.contenuto_esempi strong{
+  color: orange;
+  font-weight:normal;
+}
+
+.esempio_output{
+	margin:2em;
+	background-color:#111d22;
+}
+
+
+
+
+

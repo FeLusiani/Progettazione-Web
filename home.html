@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="Federico Lusiani">
+	<meta name="description" content="hhh">
+	<title>BlackHackManager</title>
+	
+	<script src="js/general.js"></script>
+	<script src="js/log_in_out.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+</head>
+
+<body OnLoad="CaricaUser()">
+	<div class="backgroundLayer">
+		<div class ="totalcontainer">
+			<div class="pannello_utente">
+				<p>Utente: </p>
+				<span id="user"></span>
+				<input type="button" value="LOG-OUT" onclick="log_out()">
+			</div>
+			<!-- header -->
+			<div class = "headercontainer">
+				<header>
+					<h1>BHM</h1>
+					<h5>The <b>B</b>lack <b>H</b>ack <b>M</b>anager</h5>
+				</header>
+				<nav>
+					<ul>
+						<li><a class="selected fade-in" href="#">HOME</a></li>
+						<li><a class="fade-in" href="schedario.html">SCHEDARIO</a></li>
+						<li><a class="fade-in" href="gioco.html">GIOCO</a></li>
+						<li><a class="fade-in" href="comandi.html">COMANDI</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!--corpo principale -->
+			<div class="main_section">
+				<div class="sub_section">
+					<h3><b>BHM</b></h3>
+
+					<p class = "description">
+						<b>B</b>lack <b>H</b>ack <b>M</b>anager (<b>BHM</b>) 
+						è un tool che aiuta i giocatori di 
+						<a class="fade-in" target="_blank" href="https://www.kickstarter.com/projects/1730454032/the-black-hack-rpg-second-edition?lang=it">Black Hack</a> 
+						(un gioco di ruolo da tavolo) a gestire le loro partite.</p>
+					<p class = "description">Il sito si struttura in 4 pagine:</p>
+					<div class = "wraphomelists">
+						<ul>
+						<li>Home</li>
+						<li>Schedario</li>
+						<li>Gioco</li>
+						<li>Comandi</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sub_section">
+					<h3>SCHEDARIO</h3>
+					<p>Lo <a class="fade-in" href="schedario.html">Schedario</a> permette di creare, modificare ed eliminare le schede di gioco dell'utente.</p>
+					<p>Il pannello sinistro mostra le schede (in ordine alfabetico) che l'utente ha creato. Cliccando su una di queste,
+					è possibile leggerne i dati, modificarli, o eliminare la scheda.</p>
+					<p>Una scheda di gioco è costituita dai seguenti campi: nome (max 40 caratteri), descrizione (max 1000 caratteri) e statistiche. <br>
+					Le statistiche sono le seguenti:</p>
+					<div class = "wraphomelists">
+						<ul>
+						<li>Livello (LV)</li>
+						<li>Forza (FOR)</li>
+						<li>Destrezza (DEX)</li>
+						<li>Costituzione (COS)</li>
+						<li>Intelligenza (INT)</li>
+						<li>Saggezza (SAG)</li>
+						<li>Carisma (CAR)</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sub_section">
+					<h3>GIOCO</h3>
+					<p>La pagina <a class="fade-in" href="gioco.html">Gioco</a> offre una console per eseguire alcuni comandi.
+					Questi comandi permettono di simulare azioni che sono molto frequenti all'interno di una partita,
+					e permettono pertanto di accelerare considerevolmente il gioco.</p>
+					<p>Il pannello sinistro mostra le schede (in ordine alfabetico) che l'utente ha creato. Facendo click su una scheda,
+					il suo nome viene inserito nel campo di input della console, permettendo di scrivere più velocemente i comandi.</p>
+					<p>Si veda la pagina <a class="fade-in" href="comandi.html">Comandi</a>.</p>
+				</div>
+				<div class="sub_section">
+					<h3>COMANDI</h3>
+					<p>Questa pagina contiene una lista dei comandi utilizzabili all'interno della console nella pagina <a class="fade-in" href="gioco.html">Gioco</a>.<br>
+					Per ogni comando, viene spiegato il funzionamento e la sintassi relativa, e viene fornito un esempio.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>&copy;2019 Federico Lusiani</footer>
+</body>
+</html>
